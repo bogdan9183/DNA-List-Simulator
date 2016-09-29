@@ -1,0 +1,29 @@
+Structuri de date
+Tema 1 
+
+~ Secvente de ADN ~ 
+
+Bogdan Alexandru Cionca, 311CC
+
+Pentru implementarea liniilor ADN, m-am folosit de liste simplu inaltuite,
+intrucat taskurile puteau fi realizate si fara a fi nevoie de o legatura catre 
+nodul precedent.
+Se citesc din fisiere liniile de ADN, care se separa in tokeni si se creeaza
+listele initiale.
+Pana la citirea lui "ex", programul citeste comenzile pe rand. Functia Parse
+decide, in functie de primele doua caractere ale sirului. Pentru insert, 
+edit si delete, sirul va fi procesat inca o data pentru a extrage indicii
+nodului unde se va efectua operatiunea. In acelasi timp, pe stiva de comenzi
+se adauga un nou element in care retin comanda efectuata, dar si comanda opusa.
+Desi listele nu au legatura catre nodul precedent, inversarea lor se poate face
+ca fel de usor ca in cazul listelor duble, printr-o singura parcurgere a listei.
+La final, cand se intalneste sirul de caractere "ex", programul va sterge cele
+doua liste, eliberand memoria alocata nodurilor si va dezaloca si elementele
+ramase in stiva de comenzi. 
+Fiecare nod de pe stiva are doua campuri de tip sir de caractere. Intr-unul memorez
+comanda efectuala ( ie, ee, de, etc. ), fara ceilalti parametri, pe care il afisez
+in functia de afisare a stivei, iar celalalt camp contine comanda inversa, trimisa
+la Parse la comanda undo.
+Am introdus un parametru auxiliar functiei Parse prin care decid daca adaug sau
+nu la stiva de comenzi un nou element, intrucat prin aceasta functie trec comenzile
+preluate atat din fisier, cat si cele citite din stiva. 
